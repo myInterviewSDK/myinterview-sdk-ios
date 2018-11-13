@@ -1,0 +1,11 @@
+framework module MIWidget {
+  umbrella header "MIWidget.h"
+
+  export *
+  module * { export * }
+}
+
+module MIWidget.Swift {
+    header "MIWidget-Swift.h"
+    requires objc
+}
