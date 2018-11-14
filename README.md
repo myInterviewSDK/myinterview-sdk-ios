@@ -1,3 +1,5 @@
+![pod](https://img.shields.io/cocoapods/v/myinterview-sdk.svg) [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE) ![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
+
 # MyInterview iOS SDK
 Integrate video into your recruitment solution and enhance the decision making process for employers.
 
@@ -29,7 +31,7 @@ pod install
 Don't forget to provide descriptions for **NSCameraUsageDescription** and **NSMicrophoneUsageDescription** keys in your app's **Info.plist**
 
 ## Initialization & Showing
-```
+```swift
 let config = MIConfig.init("apiKey")
 let question = MIQuestion.init("Tell us about yourself")
 let vc = MIWidget.getInterview(config, questions: [question]) { (finished, interviewId) in
@@ -47,7 +49,7 @@ let vc = MIWidget.getInterview(config, questions: [question]) { (finished, inter
 ## Configuration
 
 ### MIConfig
-```
+```swift
 let config = MIConfig.init("apiKey")
 config.preparationTime = 20
 config.hideQuestions = true
@@ -57,7 +59,7 @@ config.hideQuestions = true
 **hideQuestions**: If hideQuiestions == true user won't see questions before push Start Record button. Default is false
 
 ### MIQuestion
-```
+```swift
 let question = MIQuestion.init("Tell us about yourself")
 question.partDuration = 30
 question.numOfRetakes = 4
@@ -67,8 +69,8 @@ question.numOfRetakes = 4
 **numOfRetakes**: the number of retakes the user may take for a single part, default is 0. Could be 0..9
 
 
-## Example ([Example Link]):
-```
+## Example:
+```swift
 let config = MIConfig.init("apiKey")
 config.preparationTime = 20
 config.hideQuestions = true
@@ -91,5 +93,4 @@ if let safeVc = vc {
 ```
 
 [Amazon SDK]: <https://github.com/aws/aws-sdk-ios>
-[Example Link]: <https://github.com>
 [CocoaPods Getting Started]: <https://guides.cocoapods.org/using/getting-started.html>
