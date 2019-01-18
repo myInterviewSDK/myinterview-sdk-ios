@@ -184,16 +184,19 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 
-@class NSCoder;
 
-SWIFT_CLASS("_TtC8MIWidget22MIWidgetViewController")
-@interface MIWidgetViewController : UIViewController
-@property (nonatomic, readonly) UIStatusBarStyle preferredStatusBarStyle;
-- (void)viewDidLoad;
-- (void)didReceiveMemoryWarning;
-- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;
-- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
-@end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

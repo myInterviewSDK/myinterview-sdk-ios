@@ -35,17 +35,15 @@ Don't forget to provide descriptions for **NSCameraUsageDescription** and **NSMi
 ```swift
 let config = MIConfig.init("apiKey")
 let question = MIQuestion.init("Tell us about yourself")
-let vc = MIWidget.getInterview(config, questions: [question]) { (finished, interviewId) in
-    //Callback if video interview was closed. Need to dismiss VC here.
-}
+MIWidget.start(from: self, with: config, questions: questions)
 ```
 **apiKey**: your own myInterviewKey
-
-**vc**: ViewController that you can present in your app in any way
 
 **finished**: Boolean flag. True if interview was finished and uploaded. False otherwise.
 
 **interviewId**: id of created interview
+
+**self**: view controller that is currently presented and/or will be displayed again once the interview is finished
 
 ## Configuration
 
@@ -72,25 +70,19 @@ question.numOfRetakes = 4
 
 ## Example:
 ```swift
-let config = MIConfig.init("apiKey")
-config.preparationTime = 20
-config.hideQuestions = true
-let question1 = MIQuestion.init("Tell us about yourself")
-question1.partDuration = 30
-question1.numOfRetakes = 4
-let questions = [
-     question1,
-     MIQuestion.init("This is second question"),
-     MIQuestion.init("This is third question"),
-];
-
-let vc = MIWidget.getInterview(config, questions: questions) { (finished, videoId) in
-    self.dismiss(animated: true, completion: nil)
-}
-
-if let safeVc = vc {
-    self.present(safeVc, animated: true, completion: nil)
-}
+let config = MIConfig.init("qDp2egprFa")
+        config.preparationTime = 20
+        config.hideQuestions = false
+        let question1 = MIQuestion.init("Tell us about yourself.")
+        question1.partDuration = 30
+        question1.numOfRetakes = 4
+        let questions = [
+             question1,
+             MIQuestion.init("This is second question"),
+             MIQuestion.init("This is third question"),
+        ];
+        
+        MIWidget.start(from: self, with: config, questions: questions)
 ```
 
 ## License
